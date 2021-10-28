@@ -6,7 +6,7 @@ namespace CalcoloCodiceFiscale
     {
         static void Main(string[] args)
         {
-            User u = new User("antonio", "orefice", DateTime.Parse("1998-02-24"), "uomo", "napoli");
+            User u = new User("daniele", "dolce", DateTime.Parse("2000-11-02"), "uomo", "roma");
 
             //Console.WriteLine(u.CreateSsn());
 

@@ -101,7 +101,7 @@ namespace CalcoloCodiceFiscale
             //resettiamo il nostro contatore per calcoli successivi
             counter = 0;
 
-            if (Consonanti(FirstName).Length > 4)
+            if (Consonanti(FirstName).Length >= 4)
             {
                 ris += Consonanti(FirstName)[0] + "" + Consonanti(FirstName)[2] + "" + Consonanti(FirstName)[3];
 
