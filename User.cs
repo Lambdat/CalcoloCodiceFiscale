@@ -36,6 +36,8 @@ namespace CalcoloCodiceFiscale
         /*
          * 
          * 
+         *                      ISTRUZIONI PER IL CALCOLO DEL CODICE FISCALE 
+         * 
          *  - le prime tre lettere del codice fiscale sono prese dal cognome (solitamente prima, seconda e terza consonante)
             - le seconde tre dal nome (solitamente prima, terza e quarta consonante se il numero di consonanti sono >=3)
             - le ultime due cifre dell'anno di nascita
@@ -50,7 +52,7 @@ namespace CalcoloCodiceFiscale
 
         //Metodo per effettuare il calcolo del CF
         //è void perché altera lo stato dell'oggetto
-        public void CreateSsn()
+        public string CreateSsn()
         {
             string ris = "";
 
@@ -166,7 +168,7 @@ namespace CalcoloCodiceFiscale
 
 
 
-            Ssn = ris;
+            return ris.ToUpper();
 
         }//Fine Metodo Calcolo Codice Fiscale
 
@@ -213,9 +215,9 @@ namespace CalcoloCodiceFiscale
         {
 
             int anno = Dob.Year;
+            
 
             string ris = anno.ToString().Substring(2, 2);
-
 
 
 
@@ -343,9 +345,128 @@ namespace CalcoloCodiceFiscale
                     {
 
                         string[] comuni = riga.Split(";");
-                        ris = comuni[0];
-                        break;
-
+                        string[] parole = comuni[1].Split();
+                        if(parole[0].ToUpper()==Pob.ToUpper())
+                        {
+                            ris = comuni[0];
+                            break;
+                        }
+                        else if (parole.Length == 3)
+                        {
+                            if(
+                                parole[0].ToUpper()==Pob.ToUpper().Split()[0] &&
+                                parole[1].ToUpper() == Pob.ToUpper().Split()[1]
+                              )
+                            {
+                                ris = comuni[0];
+                                break;
+                            }
+                        }
+                        else if (parole.Length == 4)
+                        {
+                            if (
+                                parole[0].ToUpper() == Pob.ToUpper().Split()[0] &&
+                                parole[1].ToUpper() == Pob.ToUpper().Split()[1] &&
+                                parole[2].ToUpper() == Pob.ToUpper().Split()[2]
+                               )
+                            {
+                                ris = comuni[0];
+                                break;
+                            }
+                        }
+                        else if (parole.Length == 5)
+                        {
+                            if (
+                                parole[0].ToUpper() == Pob.ToUpper().Split()[0] &&
+                                parole[1].ToUpper() == Pob.ToUpper().Split()[1] &&
+                                parole[2].ToUpper() == Pob.ToUpper().Split()[2] &&
+                                parole[3].ToUpper() == Pob.ToUpper().Split()[3]
+                               )
+                            {
+                                ris = comuni[0];
+                                break;
+                            }
+                        }
+                        else if (parole.Length == 6)
+                        {
+                            if (
+                                parole[0].ToUpper() == Pob.ToUpper().Split()[0] &&
+                                parole[1].ToUpper() == Pob.ToUpper().Split()[1] &&
+                                parole[2].ToUpper() == Pob.ToUpper().Split()[2] &&
+                                parole[3].ToUpper() == Pob.ToUpper().Split()[3] &&
+                                parole[4].ToUpper() == Pob.ToUpper().Split()[4]
+                               )
+                            {
+                                ris = comuni[0];
+                                break;
+                            }
+                        }
+                        else if (parole.Length == 7)
+                        {
+                            if (
+                                parole[0].ToUpper() == Pob.ToUpper().Split()[0] &&
+                                parole[1].ToUpper() == Pob.ToUpper().Split()[1] &&
+                                parole[2].ToUpper() == Pob.ToUpper().Split()[2] &&
+                                parole[3].ToUpper() == Pob.ToUpper().Split()[3] &&
+                                parole[4].ToUpper() == Pob.ToUpper().Split()[4] &&
+                                parole[5].ToUpper() == Pob.ToUpper().Split()[5]
+                               )
+                            {
+                                ris = comuni[0];
+                                break;
+                            }
+                        }
+                        else if (parole.Length == 8)
+                        {
+                            if (
+                                parole[0].ToUpper() == Pob.ToUpper().Split()[0] &&
+                                parole[1].ToUpper() == Pob.ToUpper().Split()[1] &&
+                                parole[2].ToUpper() == Pob.ToUpper().Split()[2] &&
+                                parole[3].ToUpper() == Pob.ToUpper().Split()[3] &&
+                                parole[4].ToUpper() == Pob.ToUpper().Split()[4] &&
+                                parole[5].ToUpper() == Pob.ToUpper().Split()[5] &&
+                                parole[6].ToUpper() == Pob.ToUpper().Split()[6]
+                               )
+                            {
+                                ris = comuni[0];
+                                break;
+                            }
+                        }
+                        else if (parole.Length == 9)
+                        {
+                            if (
+                                parole[0].ToUpper() == Pob.ToUpper().Split()[0] &&
+                                parole[1].ToUpper() == Pob.ToUpper().Split()[1] &&
+                                parole[2].ToUpper() == Pob.ToUpper().Split()[2] &&
+                                parole[3].ToUpper() == Pob.ToUpper().Split()[3] &&
+                                parole[4].ToUpper() == Pob.ToUpper().Split()[4] &&
+                                parole[5].ToUpper() == Pob.ToUpper().Split()[5] &&
+                                parole[6].ToUpper() == Pob.ToUpper().Split()[6] &&
+                                parole[7].ToUpper() == Pob.ToUpper().Split()[7]
+                               )
+                            {
+                                ris = comuni[0];
+                                break;
+                            }
+                        }
+                        else if (parole.Length == 10)
+                        {
+                            if (
+                                parole[0].ToUpper() == Pob.ToUpper().Split()[0] &&
+                                parole[1].ToUpper() == Pob.ToUpper().Split()[1] &&
+                                parole[2].ToUpper() == Pob.ToUpper().Split()[2] &&
+                                parole[3].ToUpper() == Pob.ToUpper().Split()[3] &&
+                                parole[4].ToUpper() == Pob.ToUpper().Split()[4] &&
+                                parole[5].ToUpper() == Pob.ToUpper().Split()[5] &&
+                                parole[6].ToUpper() == Pob.ToUpper().Split()[6] &&
+                                parole[7].ToUpper() == Pob.ToUpper().Split()[7] &&
+                                parole[8].ToUpper() == Pob.ToUpper().Split()[8]
+                               )
+                            {
+                                ris = comuni[0];
+                                break;
+                            }
+                        }
                     }
                 }
 

@@ -6,13 +6,12 @@ namespace CalcoloCodiceFiscale
     {
         static void Main(string[] args)
         {
-            User u = new User("daniele", "dolce", DateTime.Parse("2000-11-02"), "uomo", "roma");
+            User u = new User("antonio", "orefice", DateTime.Parse("1998-02-24"), "uomo", "napoli");
 
-            //Console.WriteLine(u.CreateSsn());
+            u.Ssn = u.CreateSsn(); //Richiamo il metodo per effettuare il calcolo e valorizzare la proprietà string Ssn
 
-            u.CreateSsn(); //Richiamo il metodo void per effettuare il calcolo e caricare la proprietà Ssn
-
-            Console.WriteLine(u.Ssn);
+            Console.WriteLine($"Codice Fiscale calolato di {u.FirstName.ToUpper()} {u.LastName.ToUpper()}: \n" +
+                $"{u.Ssn}");
         }
     }
 }
