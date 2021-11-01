@@ -71,22 +71,22 @@ namespace CalcoloCodiceFiscale
             if (LastName.Split().Length == 2)
             {
                 cognomeSenzaSpazi = LastName.Split()[0].Trim() +
-                                 LastName.Split()[1].Trim();
-                Console.WriteLine("ciao");
+                                    LastName.Split()[1].Trim();
+
 
             }
             else if (LastName.Split().Length == 3)
             {
                 cognomeSenzaSpazi = LastName.Split()[0].Trim() +
-                                 LastName.Split()[1].Trim() +
-                                 LastName.Split()[2].Trim();
+                                    LastName.Split()[1].Trim() +
+                                    LastName.Split()[2].Trim();
             }
             else if (LastName.Split().Length == 4)
             {
                 cognomeSenzaSpazi = LastName.Split()[0].Trim() +
-                                 LastName.Split()[1].Trim() +
-                                 LastName.Split()[2].Trim() +
-                                 LastName.Split()[3].Trim();
+                                    LastName.Split()[1].Trim() +
+                                    LastName.Split()[2].Trim() +
+                                    LastName.Split()[3].Trim();
             }
 
             if (Consonanti(cognomeSenzaSpazi).Length >= 3)
@@ -295,6 +295,8 @@ namespace CalcoloCodiceFiscale
                 case "woman":
                 case "w":
                 case "female":
+                case "ragazza":
+                case "girl":
                     ris += 40;
                     break;
 
